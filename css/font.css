@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Binggrae';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/Binggrae.woff') format("woff");
+  }
+
+@font-face{
+	font-family: 'Binggrae-Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/Binggrae-Bold.woff') format("woff");
+}
+
+
+@font-face{
+	font-family: 'Binggrae2';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/Binggrae2.ttf') format("truetype"),
+    url('/fonts/Binggrae2.otf') format("opentype");
+}
+
+@font-face{
+	font-family: 'Binggrae2-Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/Binggrae2-Bold.ttf') format("truetype"),
+    url('/fonts/Binggrae2-Bold.otf') format("opentype");
+}
+
+
+@font-face{
+	font-family: 'BinggraeMelona';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/BinggraeMelona.ttf') format("truetype"),
+    url('/fonts/BinggraeMelona.otf') format("opentype");
+}
+
+@font-face{
+	font-family: 'BinggraeMelona-Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/BinggraeMelona-Bold.ttf') format("truetype"),
+    url('/fonts/BinggraeMelona-Bold.otf') format("opentype");
+}
+
+
+@font-face{
+	font-family: 'BinggraeTaom';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/BinggraeTaom.ttf') format("truetype"),
+    url('/fonts/BinggraeTaom.otf') format("opentype");
+}
+
+@font-face{
+	font-family: 'BinggraeTaom-Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: local('※'),
+    url('/fonts/BinggraeTaom-Bold.ttf') format("truetype"),
+    url('/fonts/BinggraeTaom-Bold.otf') format("opentype");
+}

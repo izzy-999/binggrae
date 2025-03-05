@@ -655,84 +655,9 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./js/script.js"></script>
-
-    <script>
-        const swiper1 = new Swiper('.section1-slider', {
-            slidesPerView: 3,
-            loop: true,
-            grid: {
-                rows: 2,
-                fill: 'row'
-            },
-            slidesPerGroup : 1,
-            spaceBetween: 18,
-            navigation: {
-                nextEl: '.section1-slider-wrap .swiper-button-next',
-                prevEl: '.section1-slider-wrap .swiper-button-prev',
-            },
-            breakpoints: {
-                // 768px 이상일 때
-                768: {
-                    slidesPerView: 4,
-                    grid: {
-                        rows: 1
-                    },
-                },
-                // 1024px 이상일 때
-                1024: {
-                    slidesPerView: 5,
-                    grid: {
-                        rows: 1
-                    },
-                },
-                // 1280px 이상일 때
-                1280: {
-                    slidesPerView: 6,
-                    grid: {
-                        rows: 1
-                    },
-                },
-            }
-        });
-
-        const swiper2 = new Swiper('.section2-slider', {
-            slidesPerView: 3,
-            loop: true,
-            grid: {
-                rows: 2,
-                fill: 'row'
-            },
-            slidesPerGroup : 1,
-            spaceBetween: 18,
-            navigation: {
-                prevEl: '.section2-slider-wrap .swiper-button-prev',
-                nextEl: '.section2-slider-wrap .swiper-button-next',
-            },
-            breakpoints: {
-                // 768px 이상일 때
-                768: {
-                    slidesPerView: 4,
-                    grid: {
-                        rows: 1
-                    }
-                },
-                // 1024px 이상일 때
-                1024: {
-                    slidesPerView: 5,
-                    grid: {
-                        rows: 1
-                    }
-                },
-                // 1280px 이상일 때
-                1280: {
-                    slidesPerView: 6,
-                    grid: {
-                        rows: 1
-                    }
-                },
-            }
-        });
-    </script>
+    <script src="./js/gsap.js"></script>
 </body>
 </html>

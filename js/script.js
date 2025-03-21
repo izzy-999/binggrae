@@ -95,13 +95,43 @@ window.onload = function () {
     });
 };
 
-// hamberger menu open
+
+// header fixed
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        // 50px 이상 스크롤되면
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
+});
+
+
+
+// DOM 요소 선택
 const menuTrigger = document.querySelector(".hamberger");
 const close = document.querySelector(".hamberger-menu .top.mobile .close");
 const mask = document.querySelector(".layer-mask");
 const hambergerMenu = document.querySelector(".hamberger-menu");
 const nav = document.querySelector("header .bottom nav");
 const body = document.querySelector("body");
+const hambergerMenuList = document.querySelectorAll(".hamberger-menu .container .nav > ul > li");
+
+// depth2 높이 업데이트 함수
+function updateDepth2Height(forceOpen = false) {
+    hambergerMenuList.forEach((item) => {
+        const depth2 = item.querySelector(".depth2");
+        if (depth2) {
+            if (forceOpen && window.innerWidth > 1024) {
+                depth2.style.height = "100%"; // 강제로 100% 설정
+            } else if (depth2.style.height !== "0px" && depth2.style.height !== "") {
+                depth2.style.height = window.innerWidth > 1024 ? "100%" : `${depth2.scrollHeight}px`;
+            }
+        }
+    });
+}
 
 // 햄버거 메뉴 열기
 menuTrigger.addEventListener("click", (event) => {
@@ -112,13 +142,33 @@ menuTrigger.addEventListener("click", (event) => {
         hambergerMenu.classList.add("active");
         mask.classList.add("on");
         body.style.overflow = "hidden";
-
-        if (window.innerWidth <= 1024) {
-            nav.style.display = "none";
-        }
+        nav.style.display = "block"; // 메뉴 열릴 때 nav 표시
+        updateDepth2Height(true); // 메뉴 열릴 때 depth2 높이 설정
     } else {
         closeMenu();
     }
+});
+
+// 메뉴 항목 클릭 이벤트
+hambergerMenuList.forEach(function (navItem) {
+    navItem.addEventListener("click", function () {
+        const depth2 = this.querySelector(".depth2");
+
+        // 모든 depth2를 먼저 닫음
+        hambergerMenuList.forEach((item) => {
+            const otherDepth2 = item.querySelector(".depth2");
+            if (otherDepth2 !== depth2) {
+                otherDepth2.style.height = "0px";
+            }
+        });
+
+        // 클릭된 항목의 depth2를 토글
+        if (depth2.style.height === "0px" || depth2.style.height === "") {
+            depth2.style.height = window.innerWidth > 1024 ? "100%" : `${depth2.scrollHeight}px`;
+        } else {
+            depth2.style.height = "0px";
+        }
+    });
 });
 
 // 햄버거 메뉴 닫기
@@ -131,6 +181,14 @@ function closeMenu() {
     body.style.overflow = "auto";
     menuTrigger.classList.remove("active", "checked");
 
+    // 모든 depth2를 초기화 (닫기)
+    hambergerMenuList.forEach((item) => {
+        const depth2 = item.querySelector(".depth2");
+        if (depth2) {
+            depth2.style.height = "0px";
+        }
+    });
+
     // 현재 화면 크기에 따라 nav 표시 여부 결정
     if (window.innerWidth > 1024) {
         nav.style.display = "block";
@@ -139,23 +197,39 @@ function closeMenu() {
     }
 }
 
-// 창 크기 변경 시 nav 상태 업데이트
+// 창 크기 변경 시 처리
 window.addEventListener("resize", () => {
     if (window.innerWidth > 1024) {
         nav.style.display = "block";
+        if (hambergerMenu.classList.contains("active")) {
+            updateDepth2Height(true); // 메뉴가 열려 있으면 높이 업데이트
+        }
     } else if (!menuTrigger.classList.contains("checked")) {
+        nav.style.display = "none";
+    } else {
+        updateDepth2Height(); // 모바일 크기에서 열린 상태 유지
+    }
+});
+
+// 페이지 로드 시 초기 설정
+window.addEventListener("load", () => {
+    if (window.innerWidth > 1024) {
+        nav.style.display = "block";
+        updateDepth2Height(true); // 새로고침 시 depth2 높이 100%
+    } else {
         nav.style.display = "none";
     }
 });
 
-// header fixed
-const header = document.querySelector("header");
+const langBtn = document.querySelector(".lang > a");
+const langList = document.querySelector(".lang .lang-op");
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        // 50px 이상 스크롤되면
-        header.classList.add("fixed");
+langBtn.addEventListener("click", () => {
+    if (langList.classList.contains("active")) {
+        langList.style.height = "0"; // 닫힐 때 높이를 0으로
+        langList.classList.remove("active");
     } else {
-        header.classList.remove("fixed");
+        langList.classList.add("active");
+        langList.style.height = 80 + "px"; // 열릴 때 높이를 80px로
     }
 });

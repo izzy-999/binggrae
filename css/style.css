@@ -148,7 +148,7 @@ body {
 .mobile {display: none;}
 @media (max-width: 1700px) {
     .section2 .section2-slider-wrap {width: 95%;}
-    .section2 .section2-slider-wrap .section1-slider {width: 95%;}
+    .section2 .section2-slider-wrap .section2-slider {width: 95%;}
 }
 @media (max-width: 768px) {
     .section2 {padding: 0 20px 50px 20px; border-bottom: 8px solid #f6f6f6;}

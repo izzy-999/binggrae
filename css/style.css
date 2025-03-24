@@ -120,6 +120,10 @@ body {
 .section1 .section1-slider-wrap .swiper-button-next {background: url(../images/icon/next_arrow.png) no-repeat center center; position: absolute; right: -5px;}
 .section1 .section1-slider-wrap .swiper-button-prev {background: url(../images/icon/prev_arrow.png) no-repeat center center; position: absolute; left: -5px;}
 .swiper-button-next::after, .swiper-button-prev::after {display: none;}
+@media (max-width: 1700px) {
+    .section1 .section1-slider-wrap {width: 95%;}
+    .section1 .section1-slider-wrap .section1-slider {width: 95%;}
+}
 @media (max-width: 768px) {
     .section1 {padding: 0 20px 50px 20px; border-bottom: 8px solid #f6f6f6;}
     .section1 h2 {font-size: 22px; margin: 40px 0 0 0;}
@@ -142,6 +146,10 @@ body {
 .section2 .section2-slider-wrap .swiper-button-prev {background: url(../images/icon/prev_arrow.png) no-repeat center center; position: absolute; left: -5px;}
 .swiper-button-next::after, .swiper-button-prev::after {display: none;}
 .mobile {display: none;}
+@media (max-width: 1700px) {
+    .section2 .section2-slider-wrap {width: 95%;}
+    .section2 .section2-slider-wrap .section1-slider {width: 95%;}
+}
 @media (max-width: 768px) {
     .section2 {padding: 0 20px 50px 20px; border-bottom: 8px solid #f6f6f6;}
     .section2 h2 {font-size: 22px; margin: 40px 0 0 0;}

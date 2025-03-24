@@ -2,6 +2,7 @@ body {
     font-family: "Poppins", "Noto Sans KR", "Binggrae", "Binggrae-Bold", "Binggrae2", "Binggrae2-Bold", "BinggraeMelona", "BinggraeMelona-Bold", "BinggraeTaom", "BinggraeTaom-Bold",sans-serif;
     color: #1f1f1f;
     letter-spacing: -0.09em;
+    overflow-x: hidden;
 }
 
 .container {width: 100%; max-width: 1310px; margin: 0 auto;}
